@@ -1,0 +1,12 @@
+avg <- 10
+AVG <- 20
+val.a <- 15
+val.b <- 20
+val.A <- 19
+
+print(avg)
+
+v1 <- 10
+v1
+v1<- "Good Morning"
+v1
