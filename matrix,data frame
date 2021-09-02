@@ -1,0 +1,82 @@
+#data frame 데이터 추출
+
+dim(iris) #행과 열
+nrow(iris) #행의 개수
+ncol(iris)
+names(iris) #=colnames
+head(iris)
+tail(iris)
+
+-------------------------------------------------------
+  
+str(iris)
+unique(iris[,5])#중복값 제외
+table(iris[,"Species"]) #도수분포표 작성
+
+--------------------------------------------------------
+  
+colSums(iris[,-5]) #col별 합계 (5번째 col제외)
+colMeans(iris[,-5]) #col별 평균
+rowSums(iris[,-5]) #row별 합
+rowMeans(iris[,-5]) #row별 평균
+
+
+--------------------------------------------------------
+  
+  
+#transpose
+  
+z <- matrix(1:20,nrow=4,ncol=5)
+z
+t(z)
+
+
+--------------------------------------------------------
+  
+#subset()함수: 조건에 맞는 행(row)추출
+IR.1 <- subset(iris,Species=="setosa")
+IR.1
+IR.2 <- subset(iris,Sepal.Length>5.0 &
+                Sepal.Width<4.0)
+IR.2
+--------------------------------------------------------
+a <- matrix(1:20,4,5)
+b <- matrix(21:40,4,5)
+a
+b
+a+b
+b-a
+b/a
+a*b #수학시간의 행렬곱셉은 %*%이용
+--------------------------------------------------------
+a
+3*a
+b-5
+2*a + 3*b
+
+--------------------------------------------------------
+a <- a*3
+b <- b-5
+
+--------------------------------------------------------
+is.matrix(iris)
+is.data.frame(iris)
+class(iris)
+class(state.x77)
+--------------------------------------------------------
+#data frame-> Matrix
+iris.m <- as.matrix(iris[,1:4])
+head(iris.m)
+tail(iris.m)
+
+tmp <- iris[,-5]
+class(tmp)
+tmp2 <- as.matrix(tmp)
+class(tmp2)
+--------------------------------------------------------
+#Matrix->data frame
+st <- data.frame(state.x77)
+head(st)
+class(st)
+
+#R함수의 입력형식 확인(help기능 참조)
