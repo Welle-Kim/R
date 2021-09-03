@@ -1,0 +1,10 @@
+myiris <- list(Group=iris$Species,Data=iris[1:4])
+myiris
+
+myiris[[1]]
+myiris[[2]]
+
+weekdays <- factor(c("Sun","Mon","Tue","Wed","Fri","Sat"))
+weekdays
+weekdays
+as.numeric(weekdays)
