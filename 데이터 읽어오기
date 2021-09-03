@@ -1,0 +1,46 @@
+#파일에서 데이터 읽어오기/쓰기
+
+#EXCEL에서 .csv포맷으로 저장
+#read.csv
+
+
+setwd("C:/Rworks")
+mydata <- read.csv("test.csv",header=TRUE)
+mydata
+
+#파일에서 데이터 읽어오기
+mydata  #전체 데이터 출력
+head(mydata) #앞에 몇 줄 데이터 출력
+tail(mydata) #뒤의 몇 줄
+
+mydata[2,3]
+nrow(mydata)
+ncol(mydata)
+dim(mydata) #3행의 값 추출,벡터생성
+
+myRow1 <- mydata[2,] #2행의 값 추출, 벡터생성
+myRow2 <- mydata[,3] #3열의 값 추출, 벡터 생성
+
+#파일에 데이터 저장
+mynew <- mydata[,c(2,3)] #2,3열만 추출
+write.csv(mynew,"kid_new.csv",row.names=F,quote=F)
+
+#읽기
+mydata <- read.csv("C:/Rworks/test.csv",header=TRUE)
+
+#파일 탐색기 등으로 찾아서 읽어오기
+mydata <- read.csv(file.choose(),header=TRUE)
+
+#read.csv실행시 한글깨짐해결
+
+#한글 인코딩 방법 
+
+#1.UTF-8 <- 메뉴에서tools -> global option
+#euc-kr
+
+#2.또는 EXCEL에서 파일을 읽은 후->다른이름으로저장.
+#파일포멧은.csv(UTF-8)
+
+#3.R에서 파일 읽을때 encoding 옵션 추가
+setwd("C:/Rworks")
+mydata <- read.csv("test.csv",header=TRUE,encoding="utf-8")
