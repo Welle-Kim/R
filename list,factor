@@ -1,0 +1,24 @@
+#list,factor
+
+#list
+member <- list(name='Kim',address='Pusan',tel='010-1234-5678',
+               age=20,married=FALSE)
+member
+
+member[[3]]
+member$name
+
+
+#factor
+#vector와 비슷, 특저종류의 값만 가능
+
+bloold.vec <- c("A","A","AB","O","B")
+blood.type <- factor(c("A","A","AB","O","B"))
+blood.type
+is.factor(blood.type)
+blood.type[6] <- "D"
+
+blood.type
+as.numeric(blood.type)
+levels(blood.type)
+levels(blood.type)[2]
